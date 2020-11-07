@@ -7,23 +7,25 @@ public class Post {
     private String postID;
     private String message;
     private String user;
+    private String attDestFilePath;
     private LocalDate date;
     boolean updated;
 
-    public Post(String postID, String message, String user, LocalDate date) {
+    public Post(String postID, String message, String user, LocalDate date, String attDestFilePath) {
         this.postID = postID;
         this.message = message;
         this.user = user;
         this.date = date;
+        this.attDestFilePath = attDestFilePath;
         updated= false;
     }
 
-    public Post(String postID, String message, String user, LocalDate date, boolean updated) {
-        this.postID = postID;
-        this.message = message;
-        this.user = user;
-        this.date = date;
-        this.updated = true;
+    public String getAttDestFilePath() {
+        return attDestFilePath;
+    }
+
+    public void setAttDestFilePath(String attDestFilePath) {
+        this.attDestFilePath = attDestFilePath;
     }
 
     public String getPostID() {
@@ -72,6 +74,7 @@ public class Post {
                 "postID='" + postID + '\'' +
                 ", message='" + message + '\'' +
                 ", user='" + user + '\'' +
+                ", attDestFilePath='" + attDestFilePath + '\'' +
                 ", date=" + date +
                 ", updated=" + updated +
                 '}';

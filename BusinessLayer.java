@@ -9,13 +9,13 @@ public class BusinessLayer {
 
     HashMap<String, LinkedList<Post>> messageBoard = new HashMap<>();
 
-    public HashMap<String, LinkedList<Post>> createPost(String postID, String message, String user, LocalDate date){
+    public HashMap<String, LinkedList<Post>> createPost(String postID, String message, String user, LocalDate date, String attDestFilePath){
         if(messageBoard.containsKey(user))
-            messageBoard.get(user).add(new Post(postID,message,user, date));
+            messageBoard.get(user).add(new Post(postID,message,user, date, attDestFilePath));
         else
         {
             LinkedList<Post> posts = new LinkedList<>();
-            posts.add(new Post(postID,message,user, date));
+            posts.add(new Post(postID,message,user, date, attDestFilePath));
             messageBoard.put(user, posts);
         }
         return messageBoard;
@@ -37,7 +37,7 @@ public class BusinessLayer {
         return messageBoard;
     }
 
-    public HashMap<String, LinkedList<Post>> updatePost(String postID, String message, String user, LocalDate date){
+    public HashMap<String, LinkedList<Post>> updatePost(String postID, String message, String user, LocalDate date, String attDestFilePath){
         if(messageBoard.containsKey(user)){
 
             for(String userID : messageBoard.keySet()){
@@ -47,6 +47,7 @@ public class BusinessLayer {
                         if(post.getPostID().equalsIgnoreCase(postID)){
                             post.setMessage(message);
                             post.setDate(date);
+                            post.setAttDestFilePath(attDestFilePath);
                             post.setUpdated(true);
                         }
                     }

@@ -59,9 +59,22 @@ public class BusinessLayer {
         return messageBoard;
     }
 
-    public LinkedList<Post> searchPosts(String user, String dateRange, String[] hashtags){
 
-        return new LinkedList<>();
+    public LinkedList<Post> searchPosts(String user, LocalDateTime startDate, LocalDateTime endDate){
+
+        LinkedList<Post> searchResults = new LinkedList<Post>();
+
+            for (Post p : posts) {
+                if (p.getUser().equals(user)) {
+                    if(!(p.getDate().before(startDate) || p.getDate().after(endDate)))
+                            searchResults.add(p);
+                        }
+                    
+                }
+            }
+
+        Collections.reverse(searchResults);
+        return searchResults;
     }
 
     public LinkedList<Post> viewRecentPosts(){

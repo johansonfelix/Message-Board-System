@@ -1,6 +1,7 @@
 package com.company;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Post {
 
@@ -8,10 +9,10 @@ public class Post {
     private String message;
     private String user;
     private String attDestFilePath;
-    private LocalDate date;
+    private LocalDateTime date;
     boolean updated;
 
-    public Post(String postID, String message, String user, LocalDate date, String attDestFilePath) {
+    public Post(String postID, String message, String user, LocalDateTime date, String attDestFilePath) {
         this.postID = postID;
         this.message = message;
         this.user = user;
@@ -52,11 +53,11 @@ public class Post {
         this.user = user;
     }
 
-    public LocalDate getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

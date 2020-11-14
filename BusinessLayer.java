@@ -1,15 +1,15 @@
 package com.company;
-
 import javafx.geometry.Pos;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class BusinessLayer {
 
     HashMap<String, LinkedList<Post>> messageBoard = new HashMap<>();
 
-    public HashMap<String, LinkedList<Post>> createPost(String postID, String message, String user, LocalDate date, String attDestFilePath){
+    public HashMap<String, LinkedList<Post>> createPost(String postID, String message, String user, LocalDateTime date, String attDestFilePath){
         if(messageBoard.containsKey(user))
             messageBoard.get(user).add(new Post(postID,message,user, date, attDestFilePath));
         else
@@ -37,7 +37,7 @@ public class BusinessLayer {
         return messageBoard;
     }
 
-    public HashMap<String, LinkedList<Post>> updatePost(String postID, String message, String user, LocalDate date, String attDestFilePath){
+    public HashMap<String, LinkedList<Post>> updatePost(String postID, String message, String user, LocalDateTime date, String attDestFilePath){
         if(messageBoard.containsKey(user)){
 
             for(String userID : messageBoard.keySet()){
@@ -60,18 +60,33 @@ public class BusinessLayer {
     }
 
 
-    public LinkedList<Post> searchPosts(String user, LocalDateTime startDate, LocalDateTime endDate){
+    public LinkedList<Post> searchPosts(LinkedList<Post> posts ,String user, LocalDateTime startDate, LocalDateTime endDate,  LinkedList<String> hashtag){
 
         LinkedList<Post> searchResults = new LinkedList<Post>();
 
             for (Post p : posts) {
-                if (p.getUser().equals(user)) {
-                    if(!(p.getDate().before(startDate) || p.getDate().after(endDate)))
-                            searchResults.add(p);
+
+                if (user == null || p.getUser().equals(user)) {
+                    if (startDate == null || p.getDate().isAfter(startDate)) {
+                        if (endDate == null || p.getDate().isBefore(endDate)) {
+                            Boolean foundHashTag = true;
+                            for (String s : hashtag) {
+                                if (!p.getMessage().contains(s)) {
+                                    foundHashTag = false;
+                                }
+                            }
+                            if (foundHashTag) {
+                                searchResults.add(p);
+                            }
+
+
                         }
-                    
+                    }
                 }
             }
+                    
+
+
 
         Collections.reverse(searchResults);
         return searchResults;

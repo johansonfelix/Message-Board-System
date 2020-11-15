@@ -2,8 +2,12 @@ package com.company;
 import javafx.geometry.Pos;
 
 //import java.time.LocalDate;
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.io.File;
+import java.io.FileInputStream;
 
 public class BusinessLayer {
 
@@ -127,6 +131,28 @@ public class BusinessLayer {
 
         return posts;
 
+    }
+    //Gets the corresponding file path from the file from the post/attachment ID used (
+    // Only used in getStream(), not in DownloadServlet
+    private String getFilePath(String id){
+        return null;
+    }
+    //Gets the file instead
+    private File getFile(String id){
+        return null;
+    }
+    //This is the method that is going to be called from the DownloadServlet
+    public FileInputStream getStream(String id) throws IOException {
+        File dFile = new File(getFilePath(id));
+        FileInputStream inStream = new FileInputStream(dFile);
+        return inStream;
+    }
+    //Returns the filePath for the Servlet to find the MIME type. TODO find another way to give the Servlet the necessary info
+    public String getMIME(String id){
+        return getFilePath(id);
+    }
+    public String getN(String id){
+        return getFile(id).getName();
     }
 }
 

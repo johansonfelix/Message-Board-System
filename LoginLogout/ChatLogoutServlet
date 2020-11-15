@@ -1,11 +1,12 @@
 package net.login;
 import java.io.IOException;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+
+@WebServlet("/logout")
 public class ChatLogoutServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 102893823L;
  
     public ChatLogoutServlet() {
         super();
@@ -17,7 +18,7 @@ public class ChatLogoutServlet extends HttpServlet {
         if (session != null) {
             session.removeAttribute("user");
              
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("Login.jsp");
             dispatcher.forward(request, response);
         }
     }

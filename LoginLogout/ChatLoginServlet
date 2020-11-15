@@ -6,12 +6,12 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-public class ChatLoginServlet {
+
 	@WebServlet("/login")
-	public class UserLoginServlet extends HttpServlet {
+	public class ChatLoginServlet extends HttpServlet {
 	    private static final long serialVersionUID = 1L;
 	 
-	    public UserLoginServlet() {
+	    public ChatLoginServlet() {
 	        super();
 	    }
 	 
@@ -47,4 +47,4 @@ public class ChatLoginServlet {
 	
 	
 	
-	}}
+	}

@@ -29,7 +29,7 @@ import javax.servlet.http.*;
 	            if (user != null) {
 	                HttpSession session = request.getSession();
 	                session.setAttribute("user", user);
-	                nextPage = "index-light.jsp";
+	                nextPage = "home.jsp";
 	            } else {
 	                String message = "Invalid email/password";
 	                request.setAttribute("message", message);

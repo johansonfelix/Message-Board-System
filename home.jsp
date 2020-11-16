@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: felix
-  Date: 2020-11-15
-  Time: 5:13 p.m.
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -89,11 +82,11 @@
 
 
         <div class="dropdown-hover hide-small">
-            <button class="bar-item button acct-btn">  <img src="avatar.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar"> Username <i class="fas fa-caret-down"></i></button>
+            <button class="bar-item button acct-btn">  <img src="avatar.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar"> ${user.username} <i class="fas fa-caret-down"></i></button>
             <div class="acct-content">
                 <a href="#" class="bar-item button">My profile</a>
                 <a href="#" class="bar-item button">User Settings</a>
-                <a href="#" class="bar-item button">Log Out</a>
+                <a href="/A2/logout" class="bar-item button">Log Out</a>
             </div>
         </div>
 
@@ -175,7 +168,7 @@
                 <div class="col status">
                     <div class="card white">
                         <div class="container padding-small">
-                            <h6 class="opacity">Welcome User!</h6>
+                            <h6 class="opacity">Welcome ${user.username}!</h6>
                             <form action="">
 
                                 <textarea class=" msg border row-padding " form=" " placeholder="What 's on your mind?"></textarea>

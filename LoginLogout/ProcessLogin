@@ -5,9 +5,9 @@ public class ProcessLogin {
 	
 	public User LoginProcess(String email ,String password ) throws SQLException,ClassNotFoundException
 	{
-        String jdbcURL = "jdbc:mysql://localhost:3306/users";
+        String jdbcURL = "jdbc:mysql://localhost:3306/sys";
         String dbUser = "root";
-        String dbPassword = "Hidden";
+        String dbPassword = "#";
  
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
@@ -22,6 +22,7 @@ public class ProcessLogin {
  
         if (result.next()) {
             user = new User();
+            user.setUsername(result.getString("username"));
             user.setEmail(email);
         }
  

@@ -12,6 +12,7 @@ public class Post {
     private LocalDate date_created;
     private LocalDate date_modified;
     private String message;
+	private Attachment att;
     boolean updated;
 
     public Post(int postID, String postTitle, String user, LocalDate date_created, LocalDate date_modified, String message, boolean updated) {
@@ -22,6 +23,18 @@ public class Post {
         this.date_modified = date_modified;
         this.message = message;
         this.updated = updated;
+		att = null;
+    }
+	
+	public Post(int postID, String postTitle, String user, LocalDate date_created, LocalDate date_modified, String message, boolean updated, Attachment att) {
+        this.postID = postID;
+        this.postTitle = postTitle;
+        this.user = user;
+        this.date_created = date_created;
+        this.date_modified = date_modified;
+        this.message = message;
+        this.updated = updated;
+		this.att = att;
     }
 
     public int getPostID() {
@@ -79,6 +92,15 @@ public class Post {
     public void setUpdated(boolean updated) {
         this.updated = updated;
     }
+	
+	public Attachment getAtt(){
+		return att;
+	}
+	
+	public void setAtt(Attachment att){
+		this.att = att;
+	}
+	
 
     @Override
     public String toString() {

@@ -1,0 +1,1304 @@
+html {
+    box-sizing: border-box;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: Verdana, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit
+}
+
+
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    background-color: #143962;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+    display: block
+}
+
+summary {
+    display: list-item
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block
+}
+
+progress {
+    vertical-align: baseline
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+[hidden],
+template {
+    display: none
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #143962;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+a:active,
+a:hover {
+    outline-width: 0
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration: underline dotted
+}
+
+b,
+strong {
+    font-weight: bolder
+}
+
+dfn {
+    font-style: italic
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sub {
+    bottom: -0.25em
+}
+
+sup {
+    top: -0.5em
+}
+
+figure {
+    margin: 1em 40px
+}
+
+img {
+    border-style: none
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible
+}
+
+hr:after,
+hr:before {
+    content: "";
+    display: table;
+    clear: both
+}
+
+html {
+    overflow-x: hidden
+}
+
+h1 {
+    font-size: 36px
+}
+
+h2 {
+    font-size: 30px
+}
+
+h3 {
+    font-size: 24px
+}
+
+h4 {
+    font-size: 20px
+}
+
+h5 {
+    font-size: 18px
+}
+
+h6 {
+    font-size: 16px
+}
+
+.w3-serif {
+    font-family: serif
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+    margin: 10px 0
+}
+
+button,
+input,
+select,
+textarea,
+optgroup {
+    font: inherit;
+    margin: 0
+}
+
+optgroup {
+    font-weight: bold
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+    -webkit-appearance: button
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+    border-style: none;
+    padding: 0
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+    outline: 1px dotted ButtonText
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+
+legend {
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox],
+[type=radio] {
+    padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit
+}
+
+.left-align {
+    text-align: left!important
+}
+
+.right-align {
+    text-align: right!important
+}
+
+.justify {
+    text-align: justify!important
+}
+
+.center {
+    text-align: center!important
+}
+
+footer {
+    background-color: white;
+    padding-top: 16px!important;
+    padding-bottom: 16px!important;
+}
+
+.topbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+
+.nav {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    color: #fff !important;
+    background-color: #fff !important;
+    text-align: left;
+    font-size: 18px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.container {
+    padding: 0.01em 16px;
+}
+
+.container.card.white {
+    margin: 16px!important;
+}
+
+.opacity {
+    opacity: 0.60;
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 980px
+}
+
+.margin-right {
+    margin-right: 16px;
+}
+
+.margin-bottom {
+    margin-bottom: 16px;
+}
+
+.tag {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center
+}
+
+.w3-badge {
+    border-radius: 50%
+}
+
+.text-format {
+    color: #607d8b !important;
+}
+
+.row:after,
+.row:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row-padding {
+    padding: 0 8px
+}
+
+.col {
+    float: left;
+    width: 100%;
+}
+
+.col.left {
+    width: 25%;
+}
+
+.col.middle {
+    width: 58%;
+}
+
+.col.status {
+    margin-left: 8px;
+    width: 98%;
+}
+
+.bar {
+    width: 100%;
+    overflow: hidden
+}
+
+.border {
+    border: 1px solid #ccc!important
+}
+
+.bar-item {
+    width: 100%;
+    overflow: hidden;
+    color: #143962;
+}
+
+.center .bar {
+    display: inline-block;
+    width: auto
+}
+
+.bar .bar-item {
+    padding: 8px 16px;
+    float: right;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0
+}
+
+.bar .dropdown-hover,
+.bar .dropdown-click {
+    position: static;
+    float: left
+}
+
+.bar .button {
+    white-space: normal
+}
+
+.bar-block.center .bar-item {
+    text-align: center
+}
+
+.bar .button {
+    white-space: normal;
+}
+
+.item-center .bar-item {
+    display: inline-block;
+    width: auto
+}
+
+.msg {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding-top: 2px;
+}
+
+.msg:focus {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.msg:active {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.msg:hover {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 2px #719ECE;
+}
+
+.nav .bar-item {
+    padding: 8px 16px;
+    float: right;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    padding: 12px 24px!important;
+    color: #143962 !important;
+}
+
+.search-btn.bar-item {
+    margin-top: 8px;
+    background-color: #f6f7f8;
+    color: #636c72;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #edeff1;
+    box-shadow: none;
+    height: 35px;
+    width: 300px;
+    text-align: left;
+    cursor: pointer;
+    display: inline;
+    line-height: 12px;
+}
+
+.search-btn.bar-item,
+.logo.bar-item,
+.left {
+    float: left;
+}
+
+.acct-content {
+    cursor: auto;
+    color: #000;
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    margin-top: 50px;
+    padding: 0;
+    z-index: 1;
+    font-size: 12px;
+}
+
+.acct-content .bar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0
+}
+
+.dropdown-hover:hover .acct-content {
+    display: block
+}
+
+.dropdown-hover:focus .acct-content {
+    display: block
+}
+
+.card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card.white {
+    color: #000!important;
+    background-color: #fff!important;
+    border: 2px solid #f6f6f6;
+    border-radius: 4px;
+}
+
+.search-dropdown-content {
+    cursor: auto;
+    color: #000;
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    overflow: auto;
+    min-width: 160px;
+    margin-top: 45px;
+    margin-left: 250px;
+    padding: 0;
+    z-index: 1;
+}
+
+.show {
+    display: block;
+}
+
+.search-btn.bar-item:hover,
+.search-btn.bar-item:focus {
+    border: 2px solid #143962;
+    background-color: #fff;
+}
+
+.acct-btn.bar-item {
+    height: 100%;
+    color: #636c72;
+    font-size: 16px;
+    box-shadow: none;
+    text-align: left;
+    cursor: pointer;
+    line-height: 0;
+}
+
+.acct-btn.bar-item:hover {
+    background-color: #edeff1;
+}
+
+.nav .nav-btn:hover {
+    color: #fff !important;
+    background-color: #143962 !important;
+}
+
+.nav .dropdown-hover,
+.nav .dropdown-click {
+    position: static;
+    float: right
+}
+
+.w3-bar .w3-button {
+    white-space: normal
+}
+
+.hamburger-menu {
+    text-align: right!important;
+    padding: 12px 24px!important;
+    font-size: 18px!important;
+    color: #fff !important;
+    background-color: #4d636f !important;
+}
+
+.hamburger-menu:hover {
+    color: #4d636f!important;
+    background-color: #fff!important;
+}
+
+.input {
+    background-color: #fff;
+    color: #143962;
+}
+
+input[type="text"] {
+    background-color: none;
+    border: none;
+    width: 100%;
+    border-bottom: 2px solid #143962;
+    outline: none;
+}
+
+.button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    outline: none;
+}
+
+button.btn.button {
+    color: #fff !important;
+    background-color: #57707d !important;
+}
+
+button.btn.yesbtn {
+    background-color: green !important;
+}
+
+button.btn.nobtn {
+    background-color: red !important;
+}
+
+button.btn.yesbtn:hover {
+    color: white !important;
+    background-color: #666 !important;
+}
+
+button.btn.nobtn:hover {
+    color: white !important;
+    background-color: #666 !important;
+}
+
+button.btn.button:hover {
+    color: #000!important;
+    background-color: #ccc!important;
+}
+
+.button:hover {
+    color: #000!important;
+    background-color: #ccc!important;
+}
+
+.abtn {
+    color: #143962 !important;
+    background-color: #c7cdd1 !important;
+    box-shadow: 2px 3px #c0c0c0;
+}
+
+.abtn:hover {
+    color: #143962 !important;
+    background-color: #ffffff !important;
+}
+
+.abtn:active {
+    color: #143962 !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+@media (max-width:992px) and (min-width:601px) {
+    .hide-medium {
+        display: none!important
+    }
+}
+
+@media (min-width:993px) {
+    .hide-large {
+        display: none!important
+    }
+}
+
+@media (max-width:600px) {
+    .hide-small {
+        display: none!important
+    }
+}
+
+.padding-large {
+    padding: 12px 24px!important
+}
+
+.hover-white:hover {
+    color: #4d636f!important;
+    background-color: #fff!important
+}
+
+.small {
+    font-size: 14px!important
+}
+
+.large {
+    font-size: 18px!important
+}
+
+.xxlarge {
+    font-size: 36px!important
+}
+
+.ad {
+    width: 16.666%;
+}
+
+.padding {
+    padding-top: 16px!important;
+    height: 1000px;
+}
+
+.padding-small {
+    padding: 8px 16px!important
+}
+
+.attachments {
+    width: 100%;
+    padding: 5px;
+    padding-left: 15px;
+    border: 2px solid #f6f6f6;
+    border-radius: 10px;
+}
+
+.attachments:hover {
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+.right {
+    float: right;
+}
+
+.right button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+button .fa-trash-alt {
+    color: #991f25;
+}
+
+button .fa-edit {
+    color: #143962;
+}
+
+button .fa-edit:hover {
+    color: #bbb126;
+}
+
+button .fa-trash-alt:hover {
+    color: #bbb126;
+}
+
+.modal {
+    z-index: 3;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+.modal-content {
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: 600px
+}
+
+.display-topright {
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+
+/* ANIMATIONS */
+
+
+/* Simple CSS3 Fade-in-down Animation */
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+
+/* Simple CSS3 Fade-in Animation */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    opacity: 0;
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.fadeIn.first {
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+
+/* Simple CSS3 Fade-in Animation */
+
+.underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #56baed;
+    content: "";
+    transition: width 0.2s;
+}
+
+.underlineHover:hover {
+    color: #0d0d0d;
+}
+
+.underlineHover:hover:after {
+    width: 100%;
+}
+
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+}
+
+#icon {
+    width: 60%;
+    margin: 20px;
+}
+
+.errormsg {
+    color: #fff;
+    font-size: 200px;
+}
+
+.post-title-input {
+    border: 1px solid #ccc!important;
+    margin-bottom: 2px;
+    padding-left: 10px;
+}
+
+.post-title-input:focus {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.post-title-input:active {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.post-title-input:hover {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 2px #719ECE;
+}
+
+.download-btn {
+    display: inline-block;
+}
+
+.wrap {
+    background: transparent;
+    display: inline;
+}
+
+.h_iframe {
+    position: relative;
+    padding-top: 56%;
+    margin-bottom: 10px;
+}
+
+.h_iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.att {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+/* BASIC */
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    color: #92badd;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+h2 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 40px 8px 10px 8px;
+    color: #cccccc;
+}
+
+
+/* LOGIN STRUCTURE */
+
+.wrapper {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    min-height: 100%;
+    padding: 20px;
+}
+
+#formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #ffff;
+    padding: 30px;
+    width: auto;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#formFooter {
+    background-color: #f6f6f6;
+    border-top: 1px solid #dce8f1;
+    padding: 25px;
+    text-align: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+
+/* TABS */
+
+
+/*
+h2.inactive {
+  color: #cccccc;
+}
+
+h2.active {
+  color: #0d0d0d;
+  border-bottom: 2px solid #5fbae9;
+} */
+
+
+/* FORM TYPOGRAPHY*/
+
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover,
+input[type=reset]:hover {
+    background-color: #39ace7;
+}
+
+input[type=button]:active,
+input[type=submit]:active,
+input[type=reset]:active {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+input[type=text],
+input[type=email] {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 80%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+input[type=text]:focus,
+input[type=email]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+}
+
+input[type=text]:placeholder {
+    color: #cccccc;
+}
+
+
+/* ANIMATIONS */
+
+
+/* Simple CSS3 Fade-in-down Animation */
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+
+/* Simple CSS3 Fade-in Animation */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    opacity: 0;
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.fadeIn.first {
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+
+/* Simple CSS3 Fade-in Animation */
+
+.underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #56baed;
+    content: "";
+    transition: width 0.2s;
+}
+
+.underlineHover:hover {
+    color: #0d0d0d;
+}
+
+.underlineHover:hover:after {
+    width: 100%;
+}
+
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+}
+
+#icon {}

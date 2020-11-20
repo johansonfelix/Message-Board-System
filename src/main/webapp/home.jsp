@@ -98,7 +98,7 @@
                 <a href="#" class="bar-item button">My profile</a>
                 <a href="#" class="bar-item button">User Settings</a>
                 <form action = "LogoutServlet" method="post">
-                <button type="submit" class="bar-item button">Log Out</button>
+                    <button type="submit" class="bar-item button">Log Out</button>
                 </form>
             </div>
         </div>
@@ -185,8 +185,8 @@
                                 <input type="text" class="post-title-input"  name="title" placeholder="Start with an interesting Post Title" required> <br>
                                 <textarea class=" msg border row-padding" form="post-form"  name="message"  placeholder="What 's on your mind?" required></textarea>
                                 <div class="attachments">
-                                    <label>Add to your post:</label> <input type="file" name="file">
-
+                                    <label>Add to your post:</label> <input onchange="upload_check('attadd')" type="file" name="file" id="attadd">
+                                    <p id="p-addatt" style="display: none; color: red">File too large</p>
                                 </div>
                                 <br>
 
@@ -238,19 +238,19 @@
 
                 <div class="row-padding wrap" style="margin:0 -16px">
 
-                        <%if(post.getAttachment().getMediaType().startsWith("image")){ %>
+                    <%if(post.getAttachment().getMediaType().startsWith("image")){ %>
                     <div class="h_iframe">
-                    <iframe scrolling="no" width="2" height="2"
-                            src="data:image/jpg;base64,<%=post.getAttachment().getBase64attachment()%>" name="imgbox" id="imgbox" frameborder="0">
-                        <p>iframes are not supported by your browser.</p></iframe>
+                        <iframe scrolling="no" width="2" height="2"
+                                src="data:image/jpg;base64,<%=post.getAttachment().getBase64attachment()%>" name="imgbox" id="imgbox" frameborder="0">
+                            <p>iframes are not supported by your browser.</p></iframe>
                     </div>
-                        <%} else {%>
-                        <div class="row-padding" style="margin:0 -16px">
+                    <%} else {%>
+                    <div class="row-padding" style="margin:0 -16px">
 
-                            <img class="att" src="images/picture.png" style="width:10%" class="margin-bottom">
-                        </div>
+                        <img class="att" src="images/picture.png" style="width:10%" class="margin-bottom">
+                    </div>
 
-                        <%}%>
+                    <%}%>
 
                     <!--<img src="nature.jpg" style="width:100%" class="margin-bottom">-->
                 </div>
@@ -261,7 +261,7 @@
                 <button type="button" class="button abtn margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
                 <button type="button" class="button abtn margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
                 <%if(post.getAttachment()!=null){%>
-                <form class="download-btn" action="" method="post">
+                <form class="download-btn" action="FileDownloadServlet" method="get">
                     <input type="hidden" name="postID" value="<%=post.getPostID()%>">
                     <button class="button abtn margin-bottom" type="submit"><i class="fas fa-download"></i> Download</button>
                 </form>
@@ -296,12 +296,13 @@
 
 
                                     <div class="attachments">
-                                        <form action="" method="post">
-                                            <input type="hidden" value="<%=post.getPostID()%>" name="postID">
-                                            <%if(post.getAttachment()!=null){%><p> Current post attachment: <button type="submit"><a  href=""><%=post.getAttachment().getOriginal_file_name()%></a></button></p><%}%>
-                                        </form>
-                                        <label>Update attachment:</label> <input form="<%=post.getPostID()%>" onchange="upload_check('attachment<%=post.getPostID()%>')" id="attachment<%=post.getPostID()%>" type="file" name="updated-file">
 
+                                        <input type="hidden"  id="upd<%=post.getPostID()%>" value="<%=post.getPostID()%>" name="postID">
+                                        <%if(post.getAttachment()!=null){%><p> Current post attachment: <%=post.getAttachment().getOriginal_file_name()%></p>
+
+                                        <%}%>
+                                        <label>Update attachment:</label> <input form="<%=post.getPostID()%>" onchange="updateUpload_check('update<%=post.getPostID()%>')" id="update<%=post.getPostID()%>" type="file" name="updated-file">
+                                        <p id="p-update<%=post.getPostID()%>" style="display: none; color: red">File too large</p>
                                     </div>
 
                                     <br>
@@ -429,10 +430,28 @@
 
         if(upl.files[0].size > max)
         {
-            alert("File too big!");
+            document.getElementById("p-addatt").style.display="block";
             upl.value = "";
         }
-    };
+        else
+            document.getElementById("p-addatt").style.display="none";
+    }
+
+
+    function updateUpload_check(id)
+    {
+
+        var upl = document.getElementById(id);
+        var max = 1048576;
+
+        if(upl.files[0].size > max)
+        {
+            document.getElementById("p-"+id).style.display="block";
+            upl.value = "";
+        }
+        else
+            document.getElementById("p-"+id).style.display="none";
+    }
 
 
 </script>

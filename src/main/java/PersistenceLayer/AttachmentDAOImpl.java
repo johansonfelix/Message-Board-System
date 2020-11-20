@@ -27,28 +27,7 @@ public class AttachmentDAOImpl implements AttachmentDAO {
 
             while(rs.next()){
                 Attachment attachment = extractAttachmentFromResultSet(rs);
-                ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                ObjectOutputStream out = null;
-
-                try{
-                    out = new ObjectOutputStream(bos);
-                    out.writeObject(attachment);
-                    out.flush();
-                    return bos.toByteArray();
-                }
-                catch (IOException ex){
-                    System.out.println("getAttachment() Error: "+ex.getMessage());
-
-                }
-                finally {
-                    try{
-                        bos.close();
-                    }
-                    catch (IOException ex){
-                        System.out.println("getAttachment() Error: "+ex.getMessage());
-                    }
-
-                }
+                return attachment.getAttachment();
 
 
             }
@@ -145,7 +124,7 @@ public class AttachmentDAOImpl implements AttachmentDAO {
     INSERT ATTACHMENT TO DATABASE
      */
     @Override
-    public boolean insertAttachment(Attachment attachment) throws IOException {
+    public void insertAttachment(Attachment attachment) throws IOException {
         Connection connection = DBConnection.getConnection();
         try{
             String query = "INSERT INTO attachment (postID, original_file_name , file_size , mediatype ,attachment) VALUES(?,?,?,?,?)";
@@ -160,8 +139,6 @@ public class AttachmentDAOImpl implements AttachmentDAO {
             int i = ps.executeUpdate();
 
             connection.close();
-
-            return i != 0;
 
 
         }
@@ -180,14 +157,13 @@ public class AttachmentDAOImpl implements AttachmentDAO {
             }
         }
 
-        return false;
     }
 
     /*
     UPDATE ATTACHMENT TO DATABASE
      */
     @Override
-    public boolean updateAttachment(Attachment attachment) throws IOException {
+    public void updateAttachment(Attachment attachment) throws IOException {
         Connection connection = DBConnection.getConnection();
 
         try{
@@ -202,8 +178,6 @@ public class AttachmentDAOImpl implements AttachmentDAO {
             int i = ps.executeUpdate();
 
             connection.close();
-
-            return i!=0;
 
 
         }
@@ -222,14 +196,13 @@ public class AttachmentDAOImpl implements AttachmentDAO {
             }
         }
 
-        return false;
     }
 
     /*
     DELETE ATTACHMENT IN DATABASE
      */
     @Override
-    public boolean deleteAttachment(int postID) throws IOException {
+    public void deleteAttachment(int postID) throws IOException {
         Connection connection = DBConnection.getConnection();
 
         try{
@@ -239,7 +212,6 @@ public class AttachmentDAOImpl implements AttachmentDAO {
             int i = ps.executeUpdate();
 
             connection.close();
-            return i!=0;
         }
         catch (SQLException ex){
 
@@ -256,7 +228,44 @@ public class AttachmentDAOImpl implements AttachmentDAO {
             }
         }
 
-        return false;
+    }
+
+    /*
+    GET ATTACHMENT MIME TYPE - RETURNS ATTACHMENT MIME TYPE OF THE ASSOCIATED POSTID AS STRING
+    */
+
+    public String getAttachmentName(int postID) throws IOException {
+        //DB Connection
+        Connection connection = DBConnection.getConnection();
+
+        try{
+            String query = "SELECT original_file_name FROM attachment WHERE postID="+postID;
+            PreparedStatement ps = connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+
+                return rs.getString(1);
+            }
+
+        }
+        catch (SQLException ex){
+
+            System.out.println("getAttachment() Error: "+ex.getMessage());
+        }
+        finally{
+            try{
+                if(connection!=null)
+                    connection.close();
+
+            }
+            catch (SQLException ex){
+                System.out.println("getAttachment() Error: Connection can't close - "+ex.getMessage());
+            }
+
+        }
+
+        return null;
     }
 
 

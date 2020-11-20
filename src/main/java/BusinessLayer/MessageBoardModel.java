@@ -25,7 +25,7 @@ public class MessageBoardModel{
      */
     private static MessageBoardModel single_instance = null;
     private static LinkedList<Post> messageBoard = new LinkedList<>();
-    private static final PostDAOImpl postDAO = new PostDAOImpl();
+    private static final PostDAO postDAO = new PostDAOImpl();
     private static final AttachmentDAO attachmentDAO = new AttachmentDAOImpl();
     static int postIDCounter = 100;
 
@@ -131,17 +131,40 @@ public class MessageBoardModel{
     GET ATTACHMENT METHOD
      Returns a byte array of the attachment for the FileDownloadServlet
   */
-    public static byte[] getAttachment(int postID) throws SQLException, IOException {
-        return attachmentDAO.getAttachment(postID);
+    public static byte[] getAttachment(int postID) {
+        try {
+            return attachmentDAO.getAttachment(postID);
+        }
+        catch (SQLException | IOException ex){
+            System.out.println(ex.getMessage());
+            return null;
+        }
     }
 
     /*
     GET MIME TYPE METHOD
      Returns mime type a String to the FileDownloadServlet
   */
-    public static String getAttachmentMIME(int postID) throws SQLException, IOException {
-        return attachmentDAO.getAttachmentMIME(postID);
+    public static String getAttachmentMIME(int postID){
+        try {
+            return attachmentDAO.getAttachmentMIME(postID);
+        }
+        catch (SQLException | IOException ex){
+            System.out.println(ex.getMessage());
+            return null;
+        }
     }
+
+    public static String getAttachmentName(int postID){
+        try {
+            return attachmentDAO.getAttachmentName(postID);
+        }
+        catch (IOException ex){
+            System.out.println(ex.getMessage());
+            return null;
+        }
+    }
+
 
 
     private static int getNumberOfPosts() {

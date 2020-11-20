@@ -33,7 +33,8 @@ public class PostsServlet extends HttpServlet {
 
                 if(filePart.getSize()>0) {
                     InputStream fileContent = filePart.getInputStream();
-                    byte[] bytes = IOUtils.toByteArray(fileContent);
+                    byte[] bytes = new byte[fileContent.available()];
+                    fileContent.read(bytes);
                     attachment = new Attachment(filePart.getSubmittedFileName(),filePart.getSize(),filePart.getContentType(),bytes);
                 }
 

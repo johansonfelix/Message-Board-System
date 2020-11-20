@@ -10,7 +10,8 @@ public interface AttachmentDAO {
 
     byte[] getAttachment(int postID) throws SQLException, IOException;
     String getAttachmentMIME(int postID) throws SQLException, IOException;
-    boolean insertAttachment(Attachment attachment) throws IOException;
-    boolean updateAttachment(Attachment attachment) throws IOException;
-    boolean deleteAttachment(int postID) throws IOException;
+    String getAttachmentName(int postID) throws IOException;
+    void insertAttachment(Attachment attachment) throws IOException;
+    void updateAttachment(Attachment attachment) throws IOException;
+    void deleteAttachment(int postID) throws IOException;
 }

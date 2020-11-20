@@ -84,7 +84,7 @@ primary key (username));
  -Make sure javax.servlet:jstl is installed and updated
  -Make sure taglibs:standard library is installed and updated.
  
- the configurations folder is in the WEB-INF/classes folder. It has db.properties and 
+ the configurations folder is in the WEB-INF/classes folder. It has db.properties and config.properties and the users.xml files.
  
  I used intellij compiler.
   

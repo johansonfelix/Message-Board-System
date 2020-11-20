@@ -1,5 +1,4 @@
 import BusinessLayer.*;
-import org.apache.commons.io.IOUtils;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -62,7 +61,8 @@ public class PostsServlet extends HttpServlet {
                 Part filePart = request.getPart("updated-file");
                 if(filePart.getSize()>0) {
                     InputStream fileContent = filePart.getInputStream();
-                    byte[] bytes = IOUtils.toByteArray(fileContent);
+                    byte[] bytes = new byte[fileContent.available()];
+                    fileContent.read(bytes);
                     attachment = new Attachment(postID,filePart.getSubmittedFileName(),filePart.getSize(),filePart.getContentType(),bytes);
                 }
 

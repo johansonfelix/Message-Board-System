@@ -1,48 +1,43 @@
 package com.company;
 
-//import java.time.LocalDate;
+
+
 import java.time.LocalDateTime;
 
 public class Post {
 
-    private String postID;
-    private String message;
+    private int postID;
+    private String postTitle;
     private String user;
-    private String attDestFilePath;
-    private LocalDateTime date;
+    private LocalDateTime date_created;
+    private LocalDateTime date_modified;
+    private String message;
     boolean updated;
 
-    public Post(String postID, String message, String user, LocalDateTime date, String attDestFilePath) {
+    public Post(int postID, String postTitle, String user, LocalDateTime date_created, LocalDateTime date_modified, String message, boolean updated) {
         this.postID = postID;
-        this.message = message;
+        this.postTitle = postTitle;
         this.user = user;
-        this.date = date;
-        this.attDestFilePath = attDestFilePath;
-        updated= false;
+        this.date_created = date_created;
+        this.date_modified = date_modified;
+        this.message = message;
+        this.updated = updated;
     }
 
-    public String getAttDestFilePath() {
-        return attDestFilePath;
-    }
-
-    public void setAttDestFilePath(String attDestFilePath) {
-        this.attDestFilePath = attDestFilePath;
-    }
-
-    public String getPostID() {
+    public int getPostID() {
         return postID;
     }
 
-    public void setPostID(String postID) {
+    public void setPostID(int postID) {
         this.postID = postID;
     }
 
-    public String getMessage() {
-        return message;
+    public String getPostTitle() {
+        return postTitle;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setPostTitle(String postTitle) {
+        this.postTitle = postTitle;
     }
 
     public String getUser() {
@@ -53,12 +48,28 @@ public class Post {
         this.user = user;
     }
 
-    public LocalDateTime getDate() {
-        return date;
+    public LocalDateTime getDate_created() {
+        return date_created;
     }
 
-    public void setDate(LocalDateTime date) {
-        this.date = date;
+    public void setDate_created(LocalDateTime date_created) {
+        this.date_created = date_created;
+    }
+
+    public LocalDateTime getDate_modified() {
+        return date_modified;
+    }
+
+    public void setDate_modified(LocalDateTime date_modified) {
+        this.date_modified = date_modified;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public boolean isUpdated() {
@@ -72,11 +83,12 @@ public class Post {
     @Override
     public String toString() {
         return "Post{" +
-                "postID='" + postID + '\'' +
-                ", message='" + message + '\'' +
+                "postID=" + postID +
+                ", postTitle='" + postTitle + '\'' +
                 ", user='" + user + '\'' +
-                ", attDestFilePath='" + attDestFilePath + '\'' +
-                ", date=" + date +
+                ", date_created=" + date_created +
+                ", date_modified=" + date_modified +
+                ", message='" + message + '\'' +
                 ", updated=" + updated +
                 '}';
     }
